@@ -1,0 +1,782 @@
+:root {
+  --bg-main: #0a0b0e;
+  --bg-section: #14161d;
+  --bg-card: #1c1f28;
+  --bg-input: #12141a;
+
+  --border-color: #2e3340;
+  --border-focus: #ff1a40;
+
+  --text-primary: #ffffff;
+  --text-body: #c5c6c7;
+  --text-muted: #8e95a0;
+
+  --audi-red: #bb0a30;
+  --audi-red-hover: #e50d3a;
+  --audi-blue: #008acb;
+  --audi-green: #278b55;
+
+  --font-sans: "Plus Jakarta Sans", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --container-max: 75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.content-section {
+  padding-block: 3.5rem;
+}
+
+.bg-secondary {
+  background-color: var(--bg-section);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.section-subtitle {
+  display: inline-block;
+  color: var(--audi-red);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin-top: 0.5rem;
+}
+
+.site-header {
+  background-color: #060709;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.875rem;
+  padding-inline: 1rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.logo-img {
+  width: 5.625rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  font-size: 0.6875rem;
+  color: var(--audi-red);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.site-nav {
+  width: 100%;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  list-style: none;
+}
+
+.site-nav ul li a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-body);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.25rem;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.site-nav ul li a:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-cta {
+  background-color: var(--audi-red);
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.nav-cta:hover {
+  background-color: var(--audi-red-hover) !important;
+}
+
+.hero-section {
+  padding-block: 2rem 3rem;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+}
+
+.rs-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #20242f;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.rs-rhombus {
+  width: 0.5rem;
+  height: 0.75rem;
+  background-color: var(--audi-red);
+  transform: skewX(-20deg);
+  margin-right: 0.5rem;
+}
+
+.hero-title {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-size: 0.9375rem;
+  color: var(--text-body);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.hero-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  padding: 1rem;
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--audi-red);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-val {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.spec-val small {
+  font-size: 0.75rem;
+  color: var(--audi-red);
+}
+
+.spec-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.btn-primary {
+  background-color: var(--audi-red);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--audi-red-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-card);
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+.hero-visual figure {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.hero-car-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.hero-visual figure:hover .hero-car-img {
+  transform: scale(1.02);
+}
+
+.car-caption {
+  padding: 0.75rem 1rem;
+  background-color: rgba(10, 11, 14, 0.92);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.price-tag {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.project-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--audi-red);
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.project-card:hover .card-image img {
+  transform: scale(1.04);
+}
+
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.mini-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mini-specs span {
+  padding: 0.2rem 0.5rem;
+  background-color: #282c38;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-body);
+  font-family: var(--font-mono);
+}
+
+.card-body p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.card-btn {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--audi-red-hover);
+  overflow-wrap: anywhere;
+}
+
+.card-btn:hover {
+  text-decoration: underline;
+}
+
+.tech-card {
+  padding: 1.5rem;
+}
+
+.tech-icon {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--audi-red);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-text h2 {
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.875rem;
+}
+
+.highlight-item {
+  padding: 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  margin-bottom: 0.25rem;
+}
+
+.highlight-item span {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.about-visual {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.about-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.about-visual figcaption {
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-card);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.form-container {
+  max-width: 48rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--bg-card);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  transition: border-color 180ms ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.help {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.form-group input:user-invalid,
+.form-group select:user-invalid,
+.form-group textarea:user-invalid {
+  border-color: #ef4444;
+}
+
+.form-action .btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.site-footer {
+  background-color: #060709;
+  border-top: 1px solid var(--border-color);
+  padding-top: 3rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-info h3,
+.footer-links h4 {
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.footer-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.highlight-red {
+  color: var(--audi-red-hover);
+  font-weight: 700;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-block: 1.25rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #6c727f;
+}
+
+.result-section {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  padding-block: 3rem;
+}
+
+.result-card {
+  max-width: 40rem;
+  margin-inline: auto;
+  text-align: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+}
+
+.result-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--audi-green);
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.result-card h1 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.result-lead {
+  font-size: 1.0625rem;
+  color: var(--audi-red-hover);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.result-card p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.result-action {
+  margin-top: 1.5rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--border-focus);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-specs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .full-width {
+    grid-column: span 2;
+  }
+
+  .form-action .btn {
+    width: auto;
+    justify-self: start;
+    padding-inline: 2.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .site-nav {
+    width: auto;
+  }
+
+  .hero-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    flex: 1.1;
+  }
+
+  .hero-visual {
+    flex: 0.9;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 3.5rem;
+  }
+
+  .about-text {
+    flex: 1.1;
+  }
+
+  .about-visual {
+    flex: 0.9;
+  }
+}
