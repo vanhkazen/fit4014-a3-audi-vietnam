@@ -1,68 +1,52 @@
-# Audi Việt Nam — Showroom trực tuyến
+# Showroom Trực Tuyến Audi Việt Nam
 
-Website giới thiệu showroom Audi bằng HTML và CSS, thực hiện cho bài tập lớn A3 môn Thiết kế Web & Triển khai HTPM (FIT4014).
+## Sản phẩm này là gì?
 
-## Thông tin
+Website giới thiệu thương hiệu Audi, tập trung vào Audi RS7 Performance 2025, các dòng xe và công nghệ của hãng. Khách hàng yêu thích xe sang có thể xem thông tin và dùng biểu mẫu đăng ký lái thử.
 
-- **Tác giả:** Trần Việt Anh
-- **Repository:** [vanhkazen/fit4014-a3-audi-vietnam](https://github.com/vanhkazen/fit4014-a3-audi-vietnam)
-- **Hồ sơ tác giả:** [github.com/vanhkazen](https://github.com/vanhkazen)
-- **GitHub Pages:** [vanhkazen.github.io/fit4014-a3-audi-vietnam](https://vanhkazen.github.io/fit4014-a3-audi-vietnam/)
+## Demo
 
-> **Trạng thái xuất bản:** URL Pages ở trên là địa chỉ dự kiến theo tên repository. Tại ngày 18/11/2026, cấu hình GitHub Pages của repository chưa được tìm thấy (GitHub Pages API trả về 404), vì vậy chưa xác nhận website đã được triển khai hoặc URL truy cập được. Có thể mở bản local theo hướng dẫn bên dưới.
+https://vanhkazen.github.io/fit4014-a3-audi-vietnam/
 
-## Mô tả
+## Tính năng
 
-Trang chủ giới thiệu Audi RS7 Sportback, bộ sưu tập xe, công nghệ và thông tin thương hiệu. Người xem có thể đi tới biểu mẫu đăng ký lái thử; biểu mẫu kiểm tra các trường bắt buộc ở trình duyệt và chuyển sang trang kết quả mô phỏng. Dữ liệu được gửi bằng GET, không được lưu trên máy chủ và không gửi email.
+- Thanh menu điều hướng tới **Trang chủ**, **Dòng xe**, **Công nghệ**, **Về Audi** và **Đăng ký lái thử**.
+- Hero giới thiệu Audi RS7 Performance 2025 cùng bốn thông số nổi bật; các mục Dòng xe, Công nghệ và Về Audi cung cấp thêm thông tin.
+- Biểu mẫu lái thử có kiểm tra dữ liệu bắt buộc ở trình duyệt; gửi biểu mẫu hợp lệ bằng GET tới `ket-qua.html`.
+
+## Cách mở
+
+1. Mở URL ở mục [Demo](https://vanhkazen.github.io/fit4014-a3-audi-vietnam/) trên trình duyệt.
+2. Bấm các mục **Trang chủ**, **Dòng xe**, **Công nghệ**, **Về Audi** hoặc **Đăng ký lái thử** trên thanh menu để cuộn tới từng phần.
+3. Bấm nút **Khám phá các dòng xe** để xem danh mục, hoặc điền biểu mẫu ở cuối trang và bấm **Gửi yêu cầu ngay**.
 
 ## Cấu trúc thư mục
 
 ```text
 .
-├── index.html          # Trang showroom và biểu mẫu đăng ký
-├── ket-qua.html        # Trang kết quả đăng ký mô phỏng
-├── styles.css          # Giao diện và bố cục responsive
+├── index.html
+├── ket-qua.html
+├── css/
+│   └── styles.css
 ├── assets/
-│   ├── audi-logo.png
-│   ├── audi-etron-gt.jpg
-│   ├── audi-q8-etron.jpg
-│   ├── audi-rs6-avant.jpg
-│   └── audi-rs7-sportback.jpg
-├── README.md
-├── AI_LOG.md
-└── RELEASE_NOTES.md
+├── docs/
+│   ├── AI_LOG.md
+│   ├── evidence-index.md
+│   └── evidence/
+│       ├── 06-pages-public.png
+│       └── after-320.png
 ```
 
-## Chạy local
+## Đã kiểm tra
 
-Không cần cài thư viện hay build:
+Kết quả và phạm vi kiểm tra được ghi tại [docs/evidence-index.md](docs/evidence-index.md). URL GitHub Pages mở công khai được; bản đang phục vụ tại thời điểm kiểm tra vẫn là nội dung RS7 trước khi cập nhật v3. Bản v3 trong workspace cần được xuất bản trước khi xác nhận lại thông số và giao diện trên Pages. Ảnh minh chứng: [06-pages-public.png](docs/evidence/06-pages-public.png), [after-320.png](docs/evidence/after-320.png).
 
-1. Tải hoặc clone repository.
-2. Mở `index.html` trực tiếp bằng trình duyệt; hoặc chạy một máy chủ tĩnh tại thư mục dự án, ví dụ `python -m http.server 8000`, rồi truy cập `http://localhost:8000`.
-3. Nếu dùng máy chủ Python, dừng máy chủ bằng `Ctrl+C` sau khi kiểm tra.
+## Hạn chế / Chưa kiểm tra
 
-## Cách kiểm tra các trang và chức năng
+- Biểu mẫu đăng ký là biểu mẫu tĩnh dùng GET để chuyển sang `ket-qua.html`; chưa có backend hoặc cơ sở dữ liệu để lưu thông tin và không gửi email.
+- Chưa kiểm tra trực tiếp trên thiết bị iPhone vật lý; các kiểm tra kích thước hẹp được thực hiện bằng trình duyệt giả lập.
+- Tính năng Google Fonts và ảnh showroom ngoài repository cần kết nối Internet.
 
-1. Mở trang chủ, kiểm tra logo, ảnh xe và các mục điều hướng.
-2. Chọn **Dòng xe**, **Công nghệ**, **Về Audi** trên thanh điều hướng để kiểm tra các phần tương ứng.
-3. Tại **Đăng ký lái thử**, gửi thử biểu mẫu thiếu trường hoặc sai định dạng để xem xác thực HTML; sau đó điền đủ họ tên (2–80 ký tự), số điện thoại (10–11 chữ số), email hợp lệ, mẫu xe và ghi chú (10–500 ký tự).
-4. Gửi biểu mẫu hợp lệ để tới `ket-qua.html`; kiểm tra liên kết quay lại trang chủ. Trang kết quả chỉ mô phỏng xác nhận, không gửi hay lưu dữ liệu.
-5. Thu nhỏ cửa sổ trình duyệt để kiểm tra bố cục trên màn hình nhỏ.
+## Khai báo AI
 
-## Nguồn và xuất bản
-
-- Mã nguồn của website được lưu trong repository GitHub nêu trên; dự án là trang tĩnh, không có bước build.
-- URL GitHub Pages dự kiến nằm ở phần [Thông tin](#thông-tin), nhưng chưa xác nhận đã bật triển khai.
-- Font được tải từ [Google Fonts](https://fonts.google.com/). Ảnh showroom trong phần giới thiệu được nhúng từ [giaxeaudi.com.vn](https://giaxeaudi.com.vn/wp-content/uploads/Audi-Viet-Nam-Co-Bao-Nhieu-Dia-Chi-Showroom-Phan-Phoi-Chinh-Hang.jpg); các ảnh còn lại và logo là tệp trong `assets/`.
-
-## Hồ sơ và minh chứng
-
-- [Hồ sơ GitHub tác giả](https://github.com/vanhkazen)
-- [Repository và mã nguồn](https://github.com/vanhkazen/fit4014-a3-audi-vietnam)
-- [AI_LOG.md](./AI_LOG.md) — quá trình tham khảo AI và quyết định của sinh viên
-- [RELEASE_NOTES.md](./RELEASE_NOTES.md) — ghi chú bàn giao v2
-- [Bản mã website tại commit nền 1963253](https://github.com/vanhkazen/fit4014-a3-audi-vietnam/tree/1963253b634f311e33798a143649f209be696b5f)
-
-## Giới hạn
-
-Đây là giao diện minh họa phục vụ học tập, không phải website bán hàng hay đặt lịch thực. Nội dung giá và thông số xe chỉ để tham khảo trong giao diện; biểu mẫu không có backend. Font và ảnh showroom ngoài repository cần kết nối Internet để tải.
+Nhật ký sử dụng AI và phần tự chỉnh sửa được ghi trong [docs/AI_LOG.md](docs/AI_LOG.md).
